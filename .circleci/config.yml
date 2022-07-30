@@ -57,7 +57,7 @@ jobs:
             - checkout
             - run:
                   name: Deploy App
-                  # TODO: Install, build, deploy in both apps
+                  # Final deployment of application to prod
                   command: |
                       echo "Install, build, deploy in both apps"
                       npm run api:deploy
@@ -67,11 +67,13 @@ workflows:
     udagram:
         jobs:
             - build
+            #Hold task is used for qa before going to production
             - hold:
                   #branch name removed because there is only one branch
                   type: approval
                   requires:
                       - build
+            #Deployment job is run, when approval is there
             - deploy:
                   requires:
                       - hold

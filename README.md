@@ -1,5 +1,71 @@
 # Hosting a Full-Stack Application
 
+# Introduction
+
+In this project, the udagram application was used to build a application in aws with circle ci as cicd engine.
+The application build can be visited here: http://cicd-frontend-s3bucket.s3-website-us-east-1.amazonaws.com/
+
+# Circle CI builds
+
+In circle ci, the workflow consits of a build job, followd by a hold job which separates the build from the deployment job.
+
+The last circle ci build looked as follows (Hold task was already approved):
+
+PICTURE
+
+# AWS Services
+
+For this project, the following services where used:
+
+-   RDS (Database)
+-   Elastic beanstalk (Backend host)
+-   S3 (Static website)
+
+The configurations of each service looks as follows:
+
+## RDS
+
+As database, a postgres database was used. The security group for the database was made public for inbound traffic, so the backend may access the db.
+
+PICTURE
+
+## Elastic Beanstalk
+
+For elastic beanstalk, node.js was used as application type.
+
+PICTURE
+
+## S3
+
+The S3 bucket was made accessable for everyone through bucket permissions. The bucket is used to store a static website.
+
+PICTURE
+
+# Architecture
+
+The architecture of the application looks as follows
+
+PICTURE
+
+# Secrets
+
+All secrets are set via environment varibles. The variables are set in elastic beanstalk and circle ci.
+
+# Todo
+
+Screenshot folder
+Documentation folder
+
+-   Infrastructure description
+
+*   Architecture of application
+*   Pipeline Architecture
+
+-   App dependencies
+-   Pipeline process
+    Test script for api
+    Comment circle ci file
+
 ### **You can use you own project completed in previous courses or use the provided Udagram app for completing this final project.**
 
 ---
@@ -15,8 +81,6 @@ The project will also include writing documentation and runbooks covering the op
 # Udagram
 
 This application is provided to you as an alternative starter project if you do not wish to host your own code done in the previous courses of this nanodegree. The udagram application is a fairly simple application that includes all the major components of a Full-Stack web application.
-
-
 
 ### Dependencies
 
@@ -63,9 +127,9 @@ The e2e tests are using Protractor and Jasmine.
 
 ## Built With
 
-- [Angular](https://angular.io/) - Single Page Application Framework
-- [Node](https://nodejs.org) - Javascript Runtime
-- [Express](https://expressjs.com/) - Javascript API Framework
+-   [Angular](https://angular.io/) - Single Page Application Framework
+-   [Node](https://nodejs.org) - Javascript Runtime
+-   [Express](https://expressjs.com/) - Javascript API Framework
 
 ## License
 
