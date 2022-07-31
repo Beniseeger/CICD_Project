@@ -4,6 +4,7 @@
 
 In this project, the udagram application was used to build a application in aws with circle ci as cicd engine.
 The application build can be visited here: http://cicd-frontend-s3bucket.s3-website-us-east-1.amazonaws.com/
+The backend api can be visited here: cicd-udacity.eba-225pgm2p.us-east-1.elasticbeanstalk.com
 
 # Circle CI builds
 
@@ -11,7 +12,28 @@ In circle ci, the workflow consits of a build job, followd by a hold job which s
 
 The last circle ci build looked as follows (Hold task was already approved):
 
-PICTURE
+## Circle CI last depoyment
+
+![whole deployment](./screenshots/CICD/CICD%20Last%20Deployment.png)
+
+## Circle CI deploy job
+
+Steps of deployment job
+![cicd deploy config](./screenshots/CICD/CICD%20Deploy%20Job.png)
+
+Header of deployment job
+![cicd deploy header](./screenshots/CICD/CICD%20Deploy%20Job%20Header.png)
+
+## Circle CI build job
+
+Steps of build job
+![CICD Build job](./screenshots/CICD/CICD%20Build%20Job.png)
+
+Header of deployment job
+![CICD job header](./screenshots/CICD/CICD%20Deploy%20Job%20Header.png)
+
+Prove that circle ci can access aws components
+![CICD Component](./screenshots/CICD/CICD%20has%20access%20to%20AWS%20Components.png)
 
 # AWS Services
 
@@ -27,44 +49,53 @@ The configurations of each service looks as follows:
 
 As database, a postgres database was used. The security group for the database was made public for inbound traffic, so the backend may access the db.
 
-PICTURE
+![RDS config](./screenshots/RDS/RDS%20Configuration.png)
+
+With a configured security group:
+
+![RDS Security group](./screenshots/RDS/RDS%20Security%20Group.png)
 
 ## Elastic Beanstalk
 
 For elastic beanstalk, node.js was used as application type.
 
-PICTURE
+![EB Config](./screenshots/Elastic%20Beanstalk/ElasticBeanstalkHealth.png)
+
+Environment variables
+![EB Environment variables](./screenshots/Elastic%20Beanstalk/Elastic%20Beanstalk%20Variables.png)
 
 ## S3
 
 The S3 bucket was made accessable for everyone through bucket permissions. The bucket is used to store a static website.
 
-PICTURE
+![s3 configurations](./screenshots/S3/S3%20Configuration.png)
+
+Permission management S3
+
+![s3 permissions](./screenshots/S3/S3%20Permissions.png)
+
+Static website config
+
+![static website](./screenshots/S3/S3%20Static%20website.png)
 
 # Architecture
 
-The architecture of the application looks as follows
-
-PICTURE
+The architecture of the application can be seen here: [Architecture docu](./documentation/infrastructure.md)
 
 # Secrets
 
 All secrets are set via environment varibles. The variables are set in elastic beanstalk and circle ci.
+A screenshot of the set variables can be seen above and in the folder pipline.
 
-# Todo
+# Dependencies
 
-Screenshot folder
-Documentation folder
+The dependency documentation can be seen in the folder [Dependency docu](./documentation/dependencies.md)
 
--   Infrastructure description
+# Pipeline process
 
-*   Architecture of application
-*   Pipeline Architecture
+The pipeline documentation can be seen in the folder [Pipeline docu](./documentation/pipeline_process.md)
 
--   App dependencies
--   Pipeline process
-    Test script for api
-    Comment circle ci file
+---
 
 ### **You can use you own project completed in previous courses or use the provided Udagram app for completing this final project.**
 
