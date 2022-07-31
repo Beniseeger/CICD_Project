@@ -37,7 +37,7 @@ jobs:
             - run:
                   name: Front-End Build
                   command: |
-                      echo "Build the frontend app"
+                      echo "Build the frontend application"
                       npm run frontend:build
             - run:
                   name: API Build
@@ -67,10 +67,10 @@ workflows:
     udagram:
         jobs:
             - build:
-                filters:
-                    branches:
-                        only:
-                            - main
+                  filters:
+                      branches:
+                          only:
+                              - main
             #Hold task is used for qa before going to production
             - hold:
                   #branch name removed because there is only one branch
