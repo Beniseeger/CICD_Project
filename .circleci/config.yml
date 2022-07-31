@@ -66,11 +66,11 @@ jobs:
 workflows:
     udagram:
         jobs:
-            - build
+            - build:
               filters:
-                branches: 
-                  only:
-                    - main 
+                  branches:
+                      only:
+                          - main
             #Hold task is used for qa before going to production
             - hold:
                   #branch name removed because there is only one branch
