@@ -40,3 +40,5 @@ UserInterfaceState.xcuserstate
 node_modules
 venv/
 .env
+./bin/*
+bin/*

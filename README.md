@@ -1,5 +1,14 @@
 # Hosting a Full-Stack Application
 
+# Resubmitting
+
+With the new submit, the following things were changed:
+
+-   Build script is only triggered, when something is pushed to the main branch
+-   Environment variables where moved from elastic beanstalk to circle ci
+-   The documentation was extended in infrastructure and pipeline_process
+-   A pipeline diagram has been added in [Pipeline docu](./documentation/pipeline_process.md)
+
 # Introduction
 
 In this project, the udagram application was used to build a application in aws with circle ci as cicd engine.
@@ -61,7 +70,8 @@ For elastic beanstalk, node.js was used as application type.
 
 ![EB Config](./screenshots/Elastic%20Beanstalk/ElasticBeanstalkHealth.png)
 
-Environment variables
+Environment variables --- (Deprecated)
+The environment varaibles are now stored in circle ci!
 ![EB Environment variables](./screenshots/Elastic%20Beanstalk/Elastic%20Beanstalk%20Variables.png)
 
 ## S3
