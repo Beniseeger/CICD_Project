@@ -4,8 +4,11 @@
 
 With the new submit, the following things were changed:
 
--   Build script is only triggered, when something is pushed to the main branch
--   Environment variables where moved from elastic beanstalk to circle ci
+-   Build script is only triggered, when something is pushed to the main branch through filters
+-   Environment variables where moved from elastic beanstalk to circle ci, see [CICD docu](./documentation/pipeline_process.md)
+
+*   A deploy script has been setup which handles the environment variables for elastic beanstalk
+
 -   The documentation was extended in infrastructure and pipeline_process
 -   A pipeline diagram has been added in [Pipeline docu](./documentation/pipeline_process.md)
 
@@ -69,10 +72,6 @@ With a configured security group:
 For elastic beanstalk, node.js was used as application type.
 
 ![EB Config](./screenshots/Elastic%20Beanstalk/ElasticBeanstalkHealth.png)
-
-Environment variables --- (Deprecated)
-The environment varaibles are now stored in circle ci!
-![EB Environment variables](./screenshots/Elastic%20Beanstalk/Elastic%20Beanstalk%20Variables.png)
 
 ## S3
 
